@@ -7,6 +7,18 @@ app.controller('HelloCtrl', function($scope, $http) {
 });
 
 
+app.config(['$routeProvider',
+            function($routeProvider) {
+              $routeProvider.
+                when('/', {
+                  templateUrl: 'views/main.html',
+                })
+                .when('/profil', {
+              	  templateUrl: 'view/profil.html',
+              	  controller: 'GeekCtrl'
+                })
+            }]);
+
 
 app.controller('GeekCtrl', function($scope, $http) {    
     

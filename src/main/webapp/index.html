@@ -6,7 +6,7 @@
        <center><h1><u>Welcome to Geektic</u></h1></center><br>
     </head>
     
-    <body ng-controller="HelloCtrl">
+    <body ng-app="app">
         <div ng-controller="GeekCtrl">
         	<ul>
         		<h2>{{ helloMessage.message }}</h2>
@@ -26,21 +26,18 @@
 							<br>
 				 	        <button class="btn btn-large btn-block btn-primary" style=" margin:auto; margin-top:15px;" ng-click="recherche()">Rechercher</button>
 				 	 </fieldset>
-				</form> 		
-        	
+				</form> 			
         	<br>
-        	<h4>Resultat:</h4>
-      		     <div border-radius: 10px; padding: 10px;" ng-repeat="Utilisateur in geeks">		     		     
-			     <p class="text-info">{{ Utilisateur.prenom }} {{ Utilisateur.nom }}</p>	
-			     <p> Age: {{Utilisateur.age}} ans. </p>
-			     <p> mail: {{Utilisateur.mail}}</p>
-			     <p> Centres d'interêt: </p>	
-			     <ul>     		
-			     	<li>
-			     		{{ Utilisateur.centreInteret.libelle }}
-			     	</li>	
-			     </ul>	   	   
-		     </div>
+        	
+		  <div ng-show="recherche">
+        	<h2>Resultat:</h2>
+      		  <div  ng-repeat="Utilisateur in geeks">	    		     
+        	       <a href="#profil" value="Profil" >{{ Utilisateur.prenom }} {{ Utilisateur.nom }}</a>	
+		      </div>
+		  </div> 
+
+        	
+        	
 		     </ul>
 		</div>
         	
