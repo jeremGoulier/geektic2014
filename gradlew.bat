@@ -1,3 +1,4 @@
+@set GRADLE_USER_HOME=F:\Cours\UE3\ArchiNtiers\TPNOTE
 @if "%DEBUG%" == "" @echo off
 @rem ##########################################################################
 @rem

@@ -2,13 +2,55 @@
 
 <html ng-app="geektic">
     <head>
-        <title>Geektic</title>
+    <title>Geektic</title>
+       <center><h1><u>Welcome to Geektic</u></h1></center><br>
     </head>
+    
     <body ng-controller="HelloCtrl">
-        <h1>{{ helloMessage.message }}</h1>
+        <div ng-controller="GeekCtrl">
+        	<ul>
+        		<h2>{{ helloMessage.message }}</h2>
+        		<h4><i>Vous voulez trouver l'amour, alors cherchez</i></h4>	
+        		<form>
+					<fieldset style="border:solid 1px black; padding:20px; width:250px; color:midnightblue; font-family:Corbel;"> 
+					    <legend style="font-size:9; font-weight:bold;">Recherche:</legend>
+					   		<label>
+								<input type="radio" name="sexe" value="homme" ng-model="sexe"> Homme<br>
+							</label>
+							<label>
+								<input type="radio" name="sexe" value="femme" ng-model="sexe"> Femme<br>
+							</label>
+							 <select style="margin-top: 10px;" ng-model="interet" ng-options="interet.libelle for interet in interets">
+							 	<option value="">Centre d'interêt</option>
+							 </select>  
+							<br>
+				 	        <button class="btn btn-large btn-block btn-primary" style=" margin:auto; margin-top:15px;" ng-click="recherche()">Rechercher</button>
+				 	 </fieldset>
+				</form> 		
+        	
+        	<br>
+        	<h4>Resultat:</h4>
+      		     <div border-radius: 10px; padding: 10px;" ng-repeat="Utilisateur in geeks">		     		     
+			     <p class="text-info">{{ Utilisateur.prenom }} {{ Utilisateur.nom }}</p>	
+			     <p> Age: {{Utilisateur.age}} ans. </p>
+			     <p> mail: {{Utilisateur.mail}}</p>
+			     <p> Centres d'interêt: </p>	
+			     <ul>     		
+			     	<li>
+			     		{{ Utilisateur.centreInteret.libelle }}
+			     	</li>	
+			     </ul>	   	   
+		     </div>
+		     </ul>
+		</div>
+        	
+        	
+        <div>
+
 
         <script src="/js/angular.js"></script>
         <script src="/js/angular-route.js"></script>
         <script src="/js/app.js"></script>
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>	
     </body>
 </html>
