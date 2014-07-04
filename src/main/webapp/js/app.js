@@ -7,31 +7,42 @@ app.controller('HelloCtrl', function($scope, $http) {
 });
 
 
+
+//Routage
 app.config(['$routeProvider',
             function($routeProvider) {
               $routeProvider.
                 when('/', {
-                  templateUrl: 'views/main.html',
+                  templateUrl: 'view/main.html',
                 })
-                .when('/profil', {
-              	  templateUrl: 'view/profil.html',
+                .when('/profil/:id', {
+              	  templateUrl: 'view/profil.html?:id',
               	  controller: 'GeekCtrl'
                 })
+                .otherwise('/');
             }]);
 
 
-app.controller('GeekCtrl', function($scope, $http) {    
-    
+
+
+app.controller('GeekCtrl', function($scope, $http, $routeParams) {   
+	
+	//Recupère information d'un geek en fonction de son id
+    $http.get('/api/geek/' + $routeParams.id).success(function(Utilisateurs) {
+        $scope.Utilisateur = Utilisateurs;
+ });
+	
+	//Retourne la liste des centres d'interet
 	$scope.RenvoiListeInteret = function()
 	{
 		$http.get('/api/geek/ListeCentreInteret').success(function(interets) {
             $scope.interets = interets;
         });
 	}
-	
 	$scope.RenvoiListeInteret();
 	
 	
+	//Fonction de recherche
 	$scope.recherche = function()
     {
 		//On vérifie que les champs sexe et centre d'inérêt sont selectionnés
@@ -48,8 +59,7 @@ app.controller('GeekCtrl', function($scope, $http) {
         if(Utilisateur == null || Utilisateur == ""){
         	alert("Aucun geek repertorié avec ce centre d'interêt.");
 			return;
-        }
-            
+        }      
         });
     };  
 	  

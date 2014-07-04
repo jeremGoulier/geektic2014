@@ -4,12 +4,16 @@
     <head>
     <title>Geektic</title>
        <center><h1><u>Welcome to Geektic</u></h1></center><br>
+         <div ng-controller="HelloCtrl">
+         <ul>
+       		<h2>{{ helloMessage.message }}</h2>
+       	</ul>
+       	</div>
     </head>
     
     <body ng-app="app">
         <div ng-controller="GeekCtrl">
         	<ul>
-        		<h2>{{ helloMessage.message }}</h2>
         		<h4><i>Vous voulez trouver l'amour, alors cherchez</i></h4>	
         		<form>
 					<fieldset style="border:solid 1px black; padding:20px; width:250px; color:midnightblue; font-family:Corbel;"> 
@@ -29,15 +33,8 @@
 				</form> 			
         	<br>
         	
-		  <div ng-show="recherche">
-        	<h2>Resultat:</h2>
-      		  <div  ng-repeat="Utilisateur in geeks">	    		     
-        	       <a href="#profil" value="Profil" >{{ Utilisateur.prenom }} {{ Utilisateur.nom }}</a>	
-		      </div>
-		  </div> 
-
-        	
-        	
+		  <div ng-view></div> 
+			
 		     </ul>
 		</div>
         	
