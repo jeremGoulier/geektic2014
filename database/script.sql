@@ -81,3 +81,15 @@ INSERT INTO "PUBLIC"."UTILISATEUR"
 ("NOM", "PRENOM", "AGE", "MAIL", "SEXE", "CI" )
 VALUES ('Garel', 'Lorraine', '25', 'lorraine.garel@free.fr', 'femme','4');
 
+INSERT INTO "PUBLIC"."UTILISATEUR"
+("NOM", "PRENOM", "AGE", "MAIL", "SEXE", "CI" )
+VALUES ('Lespect', 'Jo', '27', 'j.lespect@orange.fr','homme','1');
+
+INSERT INTO "PUBLIC"."UTILISATEUR"
+("NOM", "PRENOM", "AGE", "MAIL", "SEXE", "CI" )
+VALUES ('Affou', 'Adam', '21', 'adamaffou@orange.fr','homme','1');
+
+INSERT INTO "PUBLIC"."UTILISATEUR"
+("NOM", "PRENOM", "AGE", "MAIL", "SEXE", "CI" )
+VALUES ('Vautard', 'Florian', '23', 'vf@orange.fr','homme','2');
+
