@@ -1,7 +1,14 @@
 <!DOCTYPE html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script src="/js/angular.js"></script>
+    <script src="/js/angular-route.js"></script>
+    <script src="/js/app.js"></script>
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+</head>
 
 <html ng-app="geektic">
-    <head>
+    <header>
     <title>Geektic</title>
        <center><h1><u>Welcome to Geektic</u></h1></center><br>
          <div ng-controller="HelloCtrl">
@@ -9,13 +16,13 @@
        		<center><h2>{{ helloMessage.message }}</h2></center>
        	</ul>
        	</div>
-    </head>
+    </header>
     
-   <center> <body ng-app="app">
+    <body ng-app="app">
         <div ng-controller="GeekCtrl">
-        	<ul>
-        		<h4><i>Vous voulez trouver l'amour, alors cherchez</i></h4>	
-        		<form>
+        	<div>
+        		<h4 class="text-center"><i>Vous voulez trouver l'amour, alors cherchez</i></h4>	
+        		<form classe="block" id="searchForm">
 					<fieldset style="border:solid 1px black; padding:20px; width:250px; color:midnightblue; font-family:Corbel;"> 
 					    <legend style="font-size:9; font-weight:bold;">Recherche:</legend>
 					   		<label>
@@ -25,26 +32,14 @@
 								<input type="radio" name="sexe" value="femme" ng-model="sexe"> Femme<br>
 							</label>
 							 <select style="margin-top: 10px;" ng-model="interet" ng-options="interet.libelle for interet in interets">
-							 	<option value="">Centre d'interêt</option>
-							 </select>  
-							<br>
+							 	<option value="">Centre d'interÃªt</option>
+							 </select><br>
 				 	        <button class="btn btn-large btn-block btn-primary" style=" margin:auto; margin-top:15px;" ng-click="recherche()">Rechercher</button>
 				 	 </fieldset>
-				</form> 			
-        	<br>
-        	
-		  <div ng-view></div> 
-			
-		     </ul>
+				</form><br>      	
+		  		<center><div ng-view></div></center> 	
+		     </div>
 		</div>
-        	
-        	
-        <div>
-
-
-        <script src="/js/angular.js"></script>
-        <script src="/js/angular-route.js"></script>
-        <script src="/js/app.js"></script>
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>	
-    </body></center>
+    </body>
+    
 </html>

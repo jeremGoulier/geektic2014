@@ -48,7 +48,7 @@ app.controller('GeekCtrl', function($scope, $http, $routeParams) {
 		//On vérifie que les champs sexe et centre d'inérêt sont selectionnés
 		if ($scope.sexe == "" || $scope.sexe == null || $scope.interet == "" || $scope.interet == null )
 		{
-			alert("Vous devez sélectionner un sexe et un centre d'interêt.");
+			alert("Vous devez selectionner un sexe et un centre d'interet.");
 			return;
 		}
 		
@@ -57,7 +57,7 @@ app.controller('GeekCtrl', function($scope, $http, $routeParams) {
             
         //On vérifie qu'il y a bien un geek repertorié au centre d'interet selectionné
         if(Utilisateur == null || Utilisateur == ""){
-        	alert("Aucun geek repertorié avec ce centre d'interêt.");
+        	alert("Aucun geek repertorie avec ce centre d'interet.");
 			return;
         }      
         });
