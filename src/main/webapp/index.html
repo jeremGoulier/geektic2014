@@ -8,17 +8,22 @@
 </head>
 
 <html ng-app="geektic">
+
     <header>
-    <title>Geektic</title>
-       <center><h1><u>Welcome to Geektic</u></h1></center><br>
-         <div ng-controller="HelloCtrl">
-         <ul>
-       		<center><h2>{{ helloMessage.message }}</h2></center>
-       	</ul>
-       	</div>
+    <div>
+    	<title>Geektic</title>
+       		<center><h1><u>Welcome to Geektic</u></h1></center><br>
+	</div>
     </header>
     
     <body ng-app="app">
+    
+        <div  ng-controller="HelloCtrl">
+       		<ul>
+    			<center><h2>{{ helloMessage.message }}</h2></center>
+       		</ul>
+       	</div>
+       		
         <div ng-controller="GeekCtrl">
         	<div>
         		<h4 class="text-center"><i>Vous voulez trouver l'amour, alors cherchez</i></h4>	
